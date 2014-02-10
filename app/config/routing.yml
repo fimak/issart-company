@@ -1,0 +1,4 @@
+iss_blog:
+    resource: "@ISSBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
