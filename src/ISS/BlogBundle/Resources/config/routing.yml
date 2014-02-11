@@ -1,5 +1,13 @@
-iss_blog_homepage:
-    pattern:  /blog/
-    defaults: { _controller: ISSBlogBundle:Default:index }
+ISSBlogBundle_homepage:
+    pattern:  /
+    defaults: { _controller: ISSBlogBundle:Post:index }
     requirements:
         _method:  GET
+
+ISSBlogBundle_view:
+    pattern: /view/{id}
+    defaults: { _controller: ISSBlogBundle:Post:view }
+    requirements:
+        _method:  GET
+        id: \d+
+

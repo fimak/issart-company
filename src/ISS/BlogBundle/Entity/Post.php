@@ -9,13 +9,30 @@ use Doctrine\ORM\Mapping as ORM;
  * @package ISS\BlogBundle\Entity
  * @ORM\Entity
  * @ORM\Table(name="Post")
+ * @ORM\HasLifecycleCallbacks
  */
 class Post
 {
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+    }
+
+    public function setUpdatedValue()
+    {
+        $this->setUpdated(new \DateTime());
+    }
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
      */
     protected $title;
 
@@ -23,6 +40,16 @@ class Post
      * @ORM\Column(type="string")
      */
     protected $type;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $image;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $body;
 
     /**
      * @ORM\Column(type="integer", length=1)
@@ -54,9 +81,22 @@ class Post
     protected $updated;
 
     /**
+     * Set title
+     *
+     * @param string $title
+     * @return Post
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
      * Get title
      *
-     * @return integer 
+     * @return string
      */
     public function getTitle()
     {
@@ -199,5 +239,61 @@ class Post
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return Post
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set body
+     *
+     * @param string $body
+     * @return Post
+     */
+    public function setBody($body)
+    {
+        $this->body = $body;
+
+        return $this;
+    }
+
+    /**
+     * Get body
+     *
+     * @return string 
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
