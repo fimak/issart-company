@@ -1,8 +1,7 @@
 parameters:
-    facebook.appId: 669439826427579
-    facebook.secret: 658d62dcc3e7fae75a7808625ea52ff0
+#    iss_blog.example.class: ISS\BlogBundle\Example
 
 services:
-    facebook:
-        class: ISS\BlogBundle\Service\Facebook
-        arguments: [{ appId: %facebook.appId%, secret: %facebook.secret% }]
+#    iss_blog.example:
+#        class: %iss_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

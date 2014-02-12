@@ -10,4 +10,3 @@ ISSBlogBundle_view:
     requirements:
         _method:  GET
         id: \d+
-

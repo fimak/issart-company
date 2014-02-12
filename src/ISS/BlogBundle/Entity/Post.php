@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Post
  * @package ISS\BlogBundle\Entity
  * @ORM\Entity
- * @ORM\Table(name="Post")
+ * @ORM\Table(name="post")
  * @ORM\HasLifecycleCallbacks
  */
 class Post

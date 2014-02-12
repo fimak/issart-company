@@ -33,4 +33,14 @@ class PostController extends Controller
         }
         return array('post' => $post);
     }
+
+    /**
+     * @Template()
+     */
+    public function consoleAction()
+    {
+        //$facebook = $this->get('facebook');
+        //var_dump($facebook);
+        return array();
+    }
 }
