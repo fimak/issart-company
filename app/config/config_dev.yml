@@ -34,3 +34,10 @@ assetic:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+
+security:
+    firewalls:
+        public:
+            fos_facebook:
+                app_url: "http://apps.facebook.com/669439826427579/"
+                server_url: "http://issart-company.loc"

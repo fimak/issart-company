@@ -73,3 +73,11 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: ISS\BlogBundle\Entity\User
+
+# FOSFacebookBundle Configuration
+fos_facebook:
+    alias:  facebook
+    app_id: 669439826427579
+    secret: 658d62dcc3e7fae75a7808625ea52ff0
+    cookie: true
+    permissions: [email, user_birthday, user_location]
