@@ -2,6 +2,15 @@ iss_blog:
     resource: "@ISSBlogBundle/Resources/config/routing.yml"
     prefix:   /blog
 
+_security_check:
+    pattern:  /login_check
+
+_security_logout:
+    pattern:  /logout
+
+fos_facebook_channel:
+    resource: "@FOSFacebookBundle/Resources/config/routing.xml"
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
@@ -21,11 +30,6 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
-_security_check:
-    pattern:  /login_fb_check
-
-_security_logout:
-    pattern:  /logout
-
-fos_facebook_channel:
-    resource: "@FOSFacebookBundle/Resources/config/routing.xml"
+_facebook_secured:
+    pattern: /secured/
+    defaults: { _controller: ISSBlogBundle:Post:index }
