@@ -1,9 +1,10 @@
 iss_blog:
     resource: "@ISSBlogBundle/Resources/config/routing.yml"
-    prefix:   /blog
+    prefix:   /
 
 _security_check:
     pattern:  /login_check
+    defaults: { _controller: FOSUserBundle:Security:login }
 
 _security_logout:
     pattern:  /logout
