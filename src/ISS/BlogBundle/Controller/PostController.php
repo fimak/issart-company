@@ -21,7 +21,6 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/blog/post/{id}", name="_view")
      * @Template()
      */
     public function viewAction($id)
@@ -39,8 +38,18 @@ class PostController extends Controller
      */
     public function consoleAction()
     {
-        //$facebook = $this->get('facebook');
-        //var_dump($facebook);
+        $facebook = $this->get('facebook');
+        //$facebook = $this->container->get('fos_facebook.api');
+        var_dump($facebook->getUser());
+
+        $user_profile = $facebook->api('/me','GET');
+        var_dump($user_profile['name']);
+        var_dump($user_profile['email']);
+
+        $issart_profile = $facebook->api('/issart','GET');
+        $issart_messages = $facebook->api('/issart/feed?fields=message','GET');
+        var_dump($issart_profile);
+
         return array();
     }
 }

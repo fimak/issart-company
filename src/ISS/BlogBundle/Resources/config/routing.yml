@@ -2,11 +2,16 @@ ISSBlogBundle_homepage:
     pattern:  /
     defaults: { _controller: ISSBlogBundle:Post:index }
     requirements:
-        _method:  GET
+        _method: GET
 
 ISSBlogBundle_view:
     pattern: /view/{id}
     defaults: { _controller: ISSBlogBundle:Post:view }
     requirements:
-        _method:  GET
+        _method: GET
         id: \d+
+ISSBlogBundle_console:
+    pattern: /console/
+    defaults: { _controller: ISSBlogBundle:Post:console }
+    requirements:
+        _method: GET

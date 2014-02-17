@@ -5,10 +5,8 @@ iss_blog:
 _security_check:
     pattern:  /login_check
     defaults: { _controller: FOSUserBundle:Security:login }
-
 _security_logout:
     pattern:  /logout
-
 fos_facebook_channel:
     resource: "@FOSFacebookBundle/Resources/config/routing.xml"
 
