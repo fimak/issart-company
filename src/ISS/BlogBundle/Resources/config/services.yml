@@ -1,7 +1,10 @@
 parameters:
-#    iss_blog.example.class: ISS\BlogBundle\Example
+    vkAppId: 4197935
+    vkSecret: 1oKQTncWkEmzdUENshmU
+    vkApiUrl: api.vk.com/api.php
 
 services:
-#    iss_blog.example:
-#        class: %iss_blog.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    VkApiService:
+        class: ISS\BlogBundle\Service\VkApiService
+        arguments: [%vkAppId%, %vkSecret%, %vkApiUrl%]
+

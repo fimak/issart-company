@@ -38,17 +38,24 @@ class PostController extends Controller
      */
     public function consoleAction()
     {
+        /**
         $facebook = $this->get('facebook');
+        //$issart_profile = $facebook->api('/issart','GET');
         //$facebook = $this->container->get('fos_facebook.api');
-        var_dump($facebook->getUser());
+        //var_dump($facebook->getUser());
 
         $user_profile = $facebook->api('/me','GET');
         var_dump($user_profile['name']);
         var_dump($user_profile['email']);
 
-        $issart_profile = $facebook->api('/issart','GET');
-        $issart_messages = $facebook->api('/issart/feed?fields=message','GET');
-        var_dump($issart_profile);
+
+        $issart_messages = $facebook->api('/issart?fields=posts.limit(3)','GET');
+        var_dump($issart_messages['posts']['data'][0]);
+        var_dump($issart_messages['posts']['data'][1]);
+        var_dump($issart_messages['posts']['data'][2]);
+        */
+        //VK
+        var_dump($this->get('VkApiService'));
 
         return array();
     }
