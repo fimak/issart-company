@@ -1,20 +1,5 @@
 {% extends "ISSBlogBundle::layout.html.twig" %}
 
 {% block content %}
-    <div id="login_button" onclick="VK.Auth.login(authInfo);"></div>
 
-    <script language="javascript">
-        VK.init({
-            apiId: 4197935
-        });
-        function authInfo(response) {
-            if (response.session) {
-                alert('user: '+response.session.mid);
-            } else {
-                alert('not auth');
-            }
-        }
-        VK.Auth.getLoginStatus(authInfo);
-        VK.UI.button('login_button');
-    </script>
 {% endblock %}

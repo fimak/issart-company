@@ -38,7 +38,7 @@ class PostController extends Controller
      */
     public function consoleAction()
     {
-        /**
+
         $facebook = $this->get('facebook');
         //$issart_profile = $facebook->api('/issart','GET');
         //$facebook = $this->container->get('fos_facebook.api');
@@ -53,9 +53,16 @@ class PostController extends Controller
         var_dump($issart_messages['posts']['data'][0]);
         var_dump($issart_messages['posts']['data'][1]);
         var_dump($issart_messages['posts']['data'][2]);
-        */
+
         //VK
-        var_dump($this->get('VkApiService'));
+        $issArtGroupId = '-26044456';
+        $vkApi = $this->get('VkApiService');
+        $vkPosts = $vkApi->api('wall.get', array(
+            'owner_id' => $issArtGroupId,
+            'count' => 3
+        ));
+
+        var_dump($vkPosts);
 
         return array();
     }
