@@ -1,6 +1,10 @@
+iss_site:
+    resource: "@ISSSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 iss_blog:
     resource: "@ISSBlogBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /blog/
 
 _security_check:
     pattern:  /login_check

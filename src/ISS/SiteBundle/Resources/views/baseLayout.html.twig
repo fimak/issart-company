@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}"/>
+    <meta name="robots" content="noindex,nofollow" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{{ asset('bundles/isssite/css/reset.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/isssite/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <script src="http://vkontakte.ru/js/api/openapi.js" type="text/javascript"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <script src="{{ asset('bundles/isssite/js/facebook_login.js') }}" type="text/javascript"></script>
+    {{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
+    <div id="page">
+        <div id="mast">
+            {% block mast %}{% endblock %}
+        </div>
+        <div id="header">
+            <div id="header-menu">
+                <div class="logo">
+                    <a href="/"><img src="{{ asset('bundles/issite/logo.png') }}" alt="ISSArt"></a>
+                </div>
+                <div id="switch-language"></div>
+                <div id="main-navigation"></div>
+                <div class="contacts"></div>
+                <div class="contact-us"></div>
+                <div id="search"></div>
+            </div>
+            {% block breadcrumbs %}{% endblock %}
+            {% block slider %}{% endblock %}
+        </div>
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="footer">
+            <div class="site-map-wrapper">
+                <div class="control-bar"></div>
+                <div class="site-map"></div>
+            </div>
+            <div class="info-wrapper">
+                <div class="contact-us"></div>
+                <div class="copyright"></div>
+                <div class="contacts"></div>
+                <div class="social-bar"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
